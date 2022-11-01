@@ -6,6 +6,7 @@ function ToDoItem(props) {
       onClick={() => {
         props.onChecked(props.id);
       }}
+      data-testid="todoitem"
     >
       <li>{props.text}</li>
     </div>
