@@ -10,11 +10,14 @@ function InputArea(props) {
 
   return (
     <div className="form">
-      <input onChange={handleChange} type="text" value={inputText} />
+      <input onChange={handleChange} type="text" value={inputText} placeholder="Add todo ..."/>
       <button
+        aria-label="Add"
         onClick={() => {
-          props.onAdd(inputText);
-          setInputText("");
+          if (inputText.trim().length !==0) {
+            props.onAdd(inputText);
+            setInputText("");  
+          }
         }}
       >
         <span>Add</span>
