@@ -1,14 +1,19 @@
 import React from "react";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function ToDoItem(props) {
   return (
-    <div
-      onClick={() => {
-        props.onChecked(props.id);
-      }}
-      data-testid="todoitem"
-    >
-      <li>{props.text}</li>
+    <div>
+      <li>{props.text}
+        <span className="icon">
+          <DeleteIcon
+            onClick={() => {
+            props.onChecked(props.id);
+            }}
+            data-testid="todoitem"
+          />
+        </span>
+      </li>
     </div>
   );
 }
