@@ -14,10 +14,12 @@ describe("ToDoItem",() => {
     it("should call the dummy deleteItem Method passed as props with name onChecked when clicked", () => {
         const onChecked = jest.fn();
         render(<ToDoItem id={"1"} text="Should Complete react testing library" onChecked = {onChecked}/>);
-        
-        const listItem = screen.getByText(/Should Complete react testing library/i);
-        const listItemToClick = screen.getByTestId("todoitem");
-        userEvent.click(listItemToClick);
+        screen.debug();
+
+        const deleteIconToClick = screen.getByTestId("deleteIcon");
+        userEvent.click(deleteIconToClick);
+        const deleteButtonInConfirmationDialog = screen.getByTestId("todoitem");
+        userEvent.click(deleteButtonInConfirmationDialog);
         
         expect(onChecked).toHaveBeenCalledWith("1");
     })

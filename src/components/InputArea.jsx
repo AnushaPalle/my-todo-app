@@ -8,17 +8,19 @@ function InputArea(props) {
     setInputText(newValue);
   }
 
+  function handleAddClick(){
+    if (inputText.trim().length !==0) {
+      props.onAdd(inputText);
+      setInputText("");  
+    }
+  }
+
   return (
     <div className="form">
       <input onChange={handleChange} type="text" value={inputText} placeholder="Add todo ..."/>
       <button
         aria-label="Add"
-        onClick={() => {
-          if (inputText.trim().length !==0) {
-            props.onAdd(inputText);
-            setInputText("");  
-          }
-        }}
+        onClick={handleAddClick}
       >
         <span>Add</span>
       </button>
