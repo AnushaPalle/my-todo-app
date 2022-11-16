@@ -32,10 +32,12 @@ function ToDoItem(props) {
         {props.text}
         <span className="icon">
           <CheckCircleIcon
+            id="checkCircleIcon"
             data-testid="checkCircleIcon"
             onClick={() => setTaskCompleted(prevTaskCompletedStatus => !prevTaskCompletedStatus)}
           />
           <DeleteIcon
+            id="deleteIcon"
             data-testid="deleteIcon"
             onClick={ () => {setShowDialog(true)}}
           />

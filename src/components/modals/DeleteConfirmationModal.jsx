@@ -36,12 +36,14 @@ export default function DeleteConfirmationModal({handleDeleteTodo, handleDialogO
           style={{display:"flex", justifyContent: "space-evenly"}}
           >
             <button 
+              id="cancelButton"
               className='cancel'
               onClick={handleDialogClose}
             >
               Cancel
             </button>
             <button 
+              id="dangerButton"
               className='danger' 
               onClick={handleDeleteTodo}
               data-testid="todoitem"
